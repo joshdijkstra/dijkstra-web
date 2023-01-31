@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "affected:build": "nx affected:build --configuration=production"
+    "ng": "nx",
+    "start": "nx serve",
+    "build": "nx run-many --target=build --all --parallel",
+    "test": "nx run-many --target=test --all --parallel",
+    "lint": "nx run-many --target=lint --all --parallel",
+    "e2e": "nx run-many --target=e2e --all"
   },
   "private": true,
   "dependencies": {
