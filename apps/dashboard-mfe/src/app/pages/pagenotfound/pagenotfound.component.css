@@ -1,0 +1,45 @@
+.sketch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 1em; */
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "vcr_osd_mono", Fallback, sans-serif;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.outOfBounds {
+  position: absolute;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(
+    -50%,
+    -50%
+  ); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+  text-align: center;
+  color: aliceblue;
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

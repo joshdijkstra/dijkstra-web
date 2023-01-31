@@ -1,0 +1,61 @@
+.spotify {
+  padding: 50px;
+}
+
+h3 {
+  /* position: absolute; */
+
+  font-size: 1rem;
+  font-family: "Montserrat", Fallback, sans-serif;
+  font-weight: 50;
+  color: white;
+}
+
+.subtitle {
+  padding: 50px;
+  width: 20rem;
+}
+.container {
+  display: flex;
+
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+}
+.otherWays {
+  background-color: black;
+}
+h1 {
+  margin: -4px;
+  font-size: 4rem;
+  font-family: "Digital";
+  color: white;
+  padding: 50px;
+}
+
+.box {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+.imagediv {
+  background-color: black;
+  margin: -4px;
+  background: black;
+  /* background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); */
+  overflow: hidden;
+}
+
+.photo {
+  aspect-ratio: 1.6 1;
+  width: 100vw;
+  opacity: 30%;
+  object-fit: cover;
+  /* height: 60vh; */
+  /* transform: translate(-50%, 0%); */
+}

@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+li a button {
+  font-family: "goodTimes", Fallback, sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  font-family: "goodTimes", Fallback, sans-serif;
+
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 60px;
+  top: 50%;
+}
+
+.name {
+  font-family: Digital;
+  color: white;
+  font-size: 2rem;
+}
+
+.nav_links li a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+button {
+  font-family: "goodTimes", Fallback, sans-serif;
+
+  padding: 9px 25px;
+  background-color: rgba(255, 255, 255, 1);
+
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button :hover {
+  background-color: rgba(0, 0, 0, 1);
+}
