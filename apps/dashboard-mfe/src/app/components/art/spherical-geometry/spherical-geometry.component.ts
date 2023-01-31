@@ -60,6 +60,6 @@ export class SphericalGeometryComponent implements OnInit {
       };
     };
 
-    new p5(sketch);
+    const canvas = new p5(sketch);
   }
 }

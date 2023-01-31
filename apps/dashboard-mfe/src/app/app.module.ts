@@ -27,6 +27,7 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
     FooterComponent,
     HeaderComponent,
   ],
+  exports: [SphericalGeometryComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
