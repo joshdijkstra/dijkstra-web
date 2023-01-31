@@ -1,5 +1,3 @@
-# ci.yml
-
 name: CI
 
 env:
@@ -9,23 +7,43 @@ on:
   push:
     branches:
       - master
-    pull_request: {}
-
-jobs:
-  builds:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out source code
-        uses: actions/checkout@v3
-        with:
-          # Required by nrwl/nx-set-shas
-          fetch-depth: 0
-      - name: 'Derive appropriate SHAs for base and head for `nx affected` commands'
-        uses: nrwl/nx-set-shas@v2
-      - name: Set up dependencies
-        uses: ./.github/actions/setup-dependencies
-
-      - name: 'Build application if affected by changes in feature branch'
-        run: yarn affected:build
+  pull_request: {}
+  
+  jobs:
+    builds:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+            cache: npm
+        - run: npm ci
+        - run: npm run build
+     test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - run: npm ci
+        - run: npm run test
+     lint:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - run: npm ci
+        - run: npm run lint
+     e2e:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - run: npm ci
+        - run: npm run e2e
