@@ -2,7 +2,9 @@
   "name": "dijkstra-web",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "affected:build": "nx affected:build --configuration=production"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.1.0",
@@ -51,4 +53,3 @@
     "typescript": "~4.8.2"
   }
 }
-
