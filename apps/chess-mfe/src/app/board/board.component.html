@@ -1,0 +1,45 @@
+<div class="board" id="chessboard">
+  <div *ngFor="let vTile of axisVertical; let j = index" ngClass="">
+    <div
+      *ngFor="let hTile of axisHorizontal; let i = index"
+      class="tile"
+      [ngClass]="{
+        attackedSquareWhite: isSquareAttacked(j, playerWhite ? 7 - i : i),
+        legalTile:
+          isLegalSquare(j, playerWhite ? 7 - i : i) &&
+          !hasPieceOn(j, playerWhite ? 7 - i : i),
+        captureTile:
+          isLegalSquare(j, playerWhite ? 7 - i : i) &&
+          hasPieceOn(j, playerWhite ? 7 - i : i),
+        whiteTile: (i + j) % 2 === 0,
+        blackTile: (i + j) % 2 === 1
+      }"
+    >
+      <div
+        class="piece"
+        *ngIf="hasPieceOn(j, playerWhite ? 7 - i : i)"
+        [ngStyle]="{
+          'background-image':
+            'url(' + lookUpImage(j, playerWhite ? 7 - i : i) + ')'
+        }"
+        (mousedown)="grabPiece($event)"
+        (mouseup)="dropPiece($event)"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+  *ngIf="promoting"
+  [ngStyle]="{ top: offsetTop + 'px', left: offsetLeft + 'px' }"
+  class="promoting"
+>
+  <div
+    class="piece"
+    [ngStyle]="{
+      'background-image': 'url(assets/queen_w.png) ',
+      opacity: '100%',
+      left: getPromotionPos() + 'px'
+    }"
+  ></div>
+</div> -->

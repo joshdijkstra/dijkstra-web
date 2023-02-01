@@ -1,0 +1,6 @@
+.app {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.4);
+}

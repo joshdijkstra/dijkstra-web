@@ -1,0 +1,81 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
+  width: 800px;
+  height: 800px;
+  background-color: none;
+}
+
+.board:hover {
+  cursor: pointer;
+}
+
+.tile {
+  display: grid;
+  place-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+.blackTile {
+  background-color: #779556;
+}
+
+.whiteTile {
+  background-color: #ebecd0;
+}
+
+.legalTile {
+  background-image: url("/assets/dot_PNG29.png");
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 160px;
+}
+
+.captureTile {
+  background-image: url("/assets/38619.png");
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100px;
+}
+
+.attackedSquareBlack {
+  background-color: rgba(0, 0, 255);
+}
+.attackedSquareWhite {
+  background-color: rgba(0, 0, 155);
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+}
+.testButton {
+  width: 12rem;
+  height: 12rem;
+}
+
+.promoting {
+  position: absolute;
+  background-color: black;
+  opacity: 30%;
+  width: 800px;
+  height: 800px;
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  position: absolute;
+}
