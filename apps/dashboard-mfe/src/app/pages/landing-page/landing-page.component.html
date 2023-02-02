@@ -1,15 +1,1 @@
-<div
-  class="board"
-  [ngStyle]="{
-    'grid-template-columns': 'repeat(' + numX + ',' + px + ')',
-    'grid-template-rows': 'repeat(' + numY + ',' + py + ')'
-  }"
->
-  <div *ngFor="let vTile of board; let i = index">
-    <div
-      class="tile"
-      *ngFor="let hTile of board[i]; let i = index"
-      [ngStyle]="{ width: px + 'px', height: py + 'px' }"
-    ></div>
-  </div>
-</div>
+<dijkstra-web-gol></dijkstra-web-gol>
