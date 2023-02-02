@@ -25,9 +25,9 @@ export class GolComponent {
         s.frameRate(20);
         const canvas2 = s.createCanvas(s.windowWidth, s.windowHeight);
         canvas2.parent('sketch-holder');
-        this.w = 20;
-        this.columns = s.floor(s.width / this.w);
-        this.rows = s.floor(s.height / this.w);
+        this.w = s.windowWidth / josh.length;
+        this.columns = josh.length;
+        this.rows = josh[0].length;
         console.log(this.columns, this.rows);
         this.board = new Array(this.columns);
         this.run = false;
@@ -69,26 +69,36 @@ export class GolComponent {
       }
 
       s.mouseWheel = () => {
-        console.log('');
         this.run = true;
       };
 
       // reset board when mouse is pressed
       s.mousePressed = () => {
-        // s.init();
-        console.log(
-          s.floor((s.mouseX * this.columns) / s.width),
-          s.floor((s.mouseY * this.rows) / s.height)
-        );
-        this.board[s.floor((s.mouseX * this.columns) / s.width)][
-          s.floor((s.mouseY * this.rows) / s.height)
-        ] =
-          this.board[s.floor((s.mouseX * this.columns) / s.width)][
-            s.floor((s.mouseY * this.rows) / s.height)
-          ] === 1
-            ? 0
-            : 1;
+        // for (let i = 0; i < this.columns; i++) {
+        //   this.board[i] = new Array(this.rows);
+        // }
+        // this.next = new Array(this.columns);
+        // for (let i = 0; i < this.columns; i++) {
+        //   this.next[i] = new Array(this.rows);
+        // }
         console.log(this.board);
+
+        s.init();
+        this.run = false;
+        console.log(this.board);
+        // console.log(
+        //   s.floor((s.mouseX * this.columns) / s.width),
+        //   s.floor((s.mouseY * this.rows) / s.height)
+        // );
+        // this.board[s.floor((s.mouseX * this.columns) / s.width)][
+        //   s.floor((s.mouseY * this.rows) / s.height)
+        // ] =
+        //   this.board[s.floor((s.mouseX * this.columns) / s.width)][
+        //     s.floor((s.mouseY * this.rows) / s.height)
+        //   ] === 1
+        //     ? 0
+        //     : 1;
+        // console.log(this.board);
       };
 
       // Fill board randomly
@@ -100,11 +110,11 @@ export class GolComponent {
               this.board[i][j] = 0;
             // Filling the rest randomly
             // else this.board[i][j] = s.floor(s.random(2));
-            else this.board[i][j] = 0;
+            else this.board[i][j] = josh[i][j];
+            // else this.board[i][j] = 0;
             this.next[i][j] = 0;
           }
         }
-        this.board = josh;
       };
 
       // The process of creating the new generation
@@ -135,7 +145,7 @@ export class GolComponent {
         }
         // Swap!
         const temp = this.board;
-        // this.board = this.next;
+        this.board = this.next;
         this.next = temp;
       };
     };
