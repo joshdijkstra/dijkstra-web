@@ -13,7 +13,44 @@ export class SphericalGeometryComponent implements OnInit {
   strokeColor = 0;
 
   ngOnInit() {
-    const sketch = (s) => {
+    const sketch = (s: {
+      setup: () => void;
+      createCanvas: (arg0: any, arg1: any, arg2: any) => any;
+      windowWidth: any;
+      windowHeight: any;
+      WEBGL: any;
+      draw: () => void;
+      background: (arg0: number) => void;
+      camera: (
+        arg0: number,
+        arg1: number,
+        arg2: number,
+        arg3: number,
+        arg4: number,
+        arg5: number,
+        arg6: number,
+        arg7: number,
+        arg8: number
+      ) => void;
+      width: number;
+      height: number;
+      tan: (arg0: number) => number;
+      PI: number;
+      translate: (arg0: number, arg1: number, arg2: number) => void;
+      stroke: (arg0: number) => void;
+      noFill: () => void;
+      push: () => void;
+      pop: () => void;
+      rotateX: (arg0: number) => void;
+      TWO_PI: number;
+      frameCount: number;
+      rotateZ: (arg0: number) => void;
+      rotateY: (arg0: number) => void;
+      sphere: (arg0: number) => void;
+      mouseReleased: () => void;
+      keyPressed: () => void;
+      key: string;
+    }) => {
       s.setup = () => {
         const canvas2 = s.createCanvas(s.windowWidth, s.windowHeight, s.WEBGL);
         canvas2.parent('sketch-holder');
